@@ -1,0 +1,148 @@
+body{
+    margin: 0%;
+    height:100%
+}
+
+.container {
+    display: flex;
+    height: 100vh; /* Establece la altura del padre para que ocupe toda la pantalla */
+}
+    
+.a {
+    display: flex;
+    flex: 1; 
+    align-items: center;
+    background-color: #f6f6f6;
+    height:100%;
+}
+
+.a img {
+    width: 70%;
+    margin: auto;
+    display: block;
+}
+
+.b {
+    display:flex;
+    flex-direction: column;
+    flex: 1; /* Hace que los hijos ocupen todo el espacio disponible */
+    height: 100%;
+    background-color: rgb(12, 12, 46);
+    justify-content: center;
+    align-items: center;
+}
+  
+.b h1,label {
+    font-family: Sans-serif;
+    color: white;
+    text-align: center;
+}
+.b label{
+    font-size: 20px;
+}
+.b form{
+    width: 230px;
+    justify-content: center;
+}
+
+.b input {
+    width: 100%;
+    margin-bottom: 10px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+.b form button{    
+    font-size: 20px;
+
+    padding: 10px 20px;
+     border-radius: 100px;
+     border: 1px solid transparent;
+
+    display: block;
+    margin: 0 auto;
+}
+
+.b form button:hover {
+    background: #db5015;
+    color:white;
+}
+
+.b form button:active {
+    transform: scale(0.95);
+  }
+
+
+/*  */
+
+/* Estilos para el botón de Login */
+.b form .login-button {    
+    background-color: #ccc; /* Color gris para el botón de Login */
+    color: black; /* Color de texto que asegura visibilidad */
+    cursor: pointer;
+    width: auto; /* Auto ajusta el ancho según el contenido */
+    margin-right: 10px; /* Solo margen a la derecha */
+    border-radius: 20px; /* Radio de borde para hacerlos uniformemente redondeados */
+    border: none;
+    padding: 10px 20px;
+    font-size: 20px;
+}
+
+/* Estilos para el botón de Sign Up */
+.b .form-buttons .button-sign-up-button {
+    background-color: #007bff; /* Azul para el botón de Sign Up */
+    color: white;
+    cursor: pointer;
+    width: auto; /* Auto ajusta el ancho según el contenido */
+    margin-left: 10px; /* Solo margen a la izquierda */
+    border-radius: 20px;
+    border: none;
+    padding: 10px 20px;
+    font-size: 20px;
+    text-decoration: none; /* Remueve el subrayado de los enlaces */
+}
+
+/* Estilos comunes para los estados hover y active de ambos botones */
+.b form button:hover, .b .form-buttons .button-sign-up-button:hover {
+    opacity: 0.8; /* Efecto suave para hover */
+}
+
+.b .form-buttons .button-sign-up-button:hover{
+    background: #db5015;
+    color:white;
+}
+
+.b form button:active, .b .form-buttons .button-sign-up-button:active {
+    transform: scale(0.95); /* Efecto para el clic */
+}
+
+/* Estilos para el contenedor de los botones para evitar saltos de línea */
+.form-buttons {
+    display: flex;
+    justify-content: center; /* Centra los botones */
+    align-items: center;
+    flex-wrap: nowrap; /* Evita el salto de línea */
+    width: 100%; /* Se ajusta al ancho del contenedor */
+}
+
+
+
+/* Estilos para el botón de Return para que coincida con el de Register */
+.button, .form-buttons a {
+    display: inline-block;
+    padding: 10px 20px;
+    margin-top: 10px; /* Espacio vertical */
+    background-color: #007bff; /* Color azul para uniformidad */
+    color: white;
+    text-decoration: none;
+    border-radius: 20px;
+    text-align: center;
+    border: none;
+    cursor: pointer;
+}
+
+.button:hover {
+    background-color: #0056b3; /* Oscurecer al pasar el ratón */
+}
+

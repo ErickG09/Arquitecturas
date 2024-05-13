@@ -4,6 +4,7 @@ from .forms import SignUpForm
 from django.contrib.auth import login, authenticate, logout
 from django.contrib import messages
 from django.views import generic
+from django.urls import reverse
 
 # Create your views here.
 def login_user(request):
@@ -26,16 +27,30 @@ def logout_user(request):
     return redirect ('login')
 
 
-class SignUpView(generic.CreateView):
-    form_class = SignUpForm
-    success_url = reverse_lazy('login')
-    template_name = 'signup.html'
+# class SignUpView(generic.CreateView):
+#     form_class = SignUpForm
+#     success_url = reverse_lazy('login')
+#     template_name = 'signup.html'
 
-    def form_valid(self, form):
-        valid = super(SignUpView, self).form_valid(form)
-        username = form.cleaned_data.get('username')
-        raw_password = form.cleaned_data.get('password1')
-        user = authenticate(username=username, password=raw_password)
-        login(self.request, user)
-        return valid
+#     def form_valid(self, form):
+#         valid = super(SignUpView, self).form_valid(form)
+#         username = form.cleaned_data.get('username')
+#         raw_password = form.cleaned_data.get('password1')
+#         user = authenticate(username=username, password=raw_password)
+#         login(self.request, user)
+#         return valid
+    
+
+
+def signup_view(request):
+    if request.method == 'POST':
+        form = SignUpForm(request.POST)
+        if form.is_valid():
+            user = form.save()
+            login(request, user)  # Opcional: loguea al usuario automáticamente tras registrarse
+            messages.success(request, "Your account has been created successfully!")
+            return redirect(reverse('index'))  # Redirige al index o a cualquier otra página adecuada
+    else:
+        form = SignUpForm()
+    return render(request, 'signup.html', {'form': form})
 
