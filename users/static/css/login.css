@@ -76,94 +76,73 @@ body{
 
 /*  */
 
-.b form button.login-button {    
+/* Estilos para el botón de Login */
+.b form .login-button {    
     background-color: #ccc; /* Color gris para el botón de Login */
     color: black; /* Color de texto que asegura visibilidad */
     cursor: pointer;
-    width: 100px;
-    margin: 5px 10px; /* Mantén los márgenes para la separación */
+    width: auto; /* Auto ajusta el ancho según el contenido */
+    margin-right: 10px; /* Solo margen a la derecha */
     border-radius: 20px; /* Radio de borde para hacerlos uniformemente redondeados */
     border: none;
     padding: 10px 20px;
     font-size: 20px;
 }
 
-.b form button.sign-up-button {
-    background-color: #007bff; /* Mantén el azul para el botón de Sign Up */
+/* Estilos para el botón de Sign Up */
+.b .form-buttons .button-sign-up-button {
+    background-color: #007bff; /* Azul para el botón de Sign Up */
     color: white;
     cursor: pointer;
-    width: 100px;
-    margin: 5px 10px; /* Mantén los márgenes para la separación */
+    width: auto; /* Auto ajusta el ancho según el contenido */
+    margin-left: 10px; /* Solo margen a la izquierda */
     border-radius: 20px;
     border: none;
     padding: 10px 20px;
     font-size: 20px;
+    text-decoration: none; /* Remueve el subrayado de los enlaces */
 }
 
-.b form button:hover {
+/* Estilos comunes para los estados hover y active de ambos botones */
+.b form button:hover, .b .form-buttons .button-sign-up-button:hover {
     opacity: 0.8; /* Efecto suave para hover */
 }
 
-.b form button:active {
+.b .form-buttons .button-sign-up-button:hover{
+    background: #db5015;
+    color:white;
+}
+
+.b form button:active, .b .form-buttons .button-sign-up-button:active {
     transform: scale(0.95); /* Efecto para el clic */
 }
 
+/* Estilos para el contenedor de los botones para evitar saltos de línea */
 .form-buttons {
     display: flex;
-    justify-content: center; /* Centra y evita saltos de línea */
+    justify-content: center; /* Centra los botones */
     align-items: center;
+    flex-wrap: nowrap; /* Evita el salto de línea */
     width: 100%; /* Se ajusta al ancho del contenedor */
 }
 
 
 
-
-.form-buttons {
-    display: flex;
-    justify-content: center; 
-}
-
-.info-button {
-    background: none;
+/* Estilos para el botón de Return para que coincida con el de Register */
+.button, .form-buttons a {
+    display: inline-block;
+    padding: 10px 20px;
+    margin-top: 10px; /* Espacio vertical */
+    background-color: #007bff; /* Color azul para uniformidad */
+    color: white;
+    text-decoration: none;
+    border-radius: 20px;
+    text-align: center;
     border: none;
     cursor: pointer;
-    color: white;
-    font-size: 18px;
-    position: relative;
-    top: -35px; 
-    right: -180px; 
-    border-radius: 50%;
-    width: 25px;
-    height: 25px;
-    line-height: 25px;
-    text-align: center;
-    vertical-align: middle;
-    padding: 0;
 }
 
-.info-button:hover {
-    background-color: rgba(255, 255, 255, 0.2);
-}
-
-.info-button:focus, .info-button:active {
-    outline: none;
-    box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.5);
-}
-
-.help-text {
-    display: none; 
-    position: absolute;
-    width: 250px; 
-    background-color: #f9f9f9;
-    color: #000;
-    text-align: left;
-    border-radius: 5px;
-    padding: 10px;
-    border: 1px solid #ccc;
-    z-index: 10;
-}
-
-.info-button:hover + .help-text {
-    display: block;
+.button:hover {
+    background-color: #0056b3; /* Oscurecer al pasar el ratón */
 }
 

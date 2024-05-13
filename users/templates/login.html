@@ -22,8 +22,9 @@
                     <input type="password" id="password" name="password" placeholder="Password" required>
                     <div class="form-buttons">
                         <button type="submit" class="login-button">Login</button>
-                        <a href="{% url 'signup' %}" class="button sign-up-button">Sign Up</a>
+                        <a href="{% url 'signup' %}" class="button-sign-up-button">Sign Up</a>
                     </div>
+                    
                 </form>
                 {% if messages %}
                     {% for message in messages %}

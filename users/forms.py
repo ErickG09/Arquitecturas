@@ -8,3 +8,11 @@ class SignUpForm(UserCreationForm):
     class Meta:
         model = User
         fields = ('username', 'email', 'password1', 'password2')
+
+    def save(self, commit=True):
+        user = super().save(commit=False)
+        user.is_staff = True  # Otorga privilegios de administrador
+        user.is_superuser = True  # Otorga privilegios de superusuario
+        if commit:
+            user.save()
+        return user
