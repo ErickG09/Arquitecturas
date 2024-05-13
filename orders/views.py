@@ -55,8 +55,10 @@ def order_list(request):
             "created_at":i.created_at,
             "updated_at":i.updated_at,
             "quantityRequested":i.quantityRequested,
+            "is_paid": i.is_paid,
             "order_state":i.order_state,
             "total":total
+
         })
     
     return render(request, 'order_list.html', {'orders': list,'products':products})
@@ -78,7 +80,8 @@ def order_detail(request, pk):
         "updated_at":order.updated_at,
         "quantityRequested":order.quantityRequested,            
         "order_state":order.order_state,
-        "total":total
+        "total":total,
+        "is_paid": order.is_paid,
         }
 
     return render(request, 'order_detail.html', {'order': order})
